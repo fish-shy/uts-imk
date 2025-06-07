@@ -10,7 +10,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A', // Placeholder: Update to actual correct answer
+    correctAnswer: 'A',
   },
   {
     question: '/images/Soal-Psikologi/118.png',
@@ -19,7 +19,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A', // Placeholder: Update to actual correct answer
+    correctAnswer: 'A',
   },
   {
     question: '/images/Soal-Psikologi/119.png',
@@ -28,7 +28,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A', // Placeholder: Update to actual correct answer
+    correctAnswer: 'A',
   },
   {
     question: '/images/Soal-Psikologi/120.png',
@@ -37,7 +37,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A', // Placeholder: Update to actual correct answer
+    correctAnswer: 'A',
   },
   {
     question: '/images/Soal-Psikologi/121.png',
@@ -46,7 +46,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A', // Placeholder: Update to actual correct answer
+    correctAnswer: 'A',
   },
   {
     question: '/images/Soal-Psikologi/122.png',
@@ -55,7 +55,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A', // Placeholder: Update to actual correct answer
+    correctAnswer: 'A',
   },
   {
     question: '/images/Soal-Psikologi/123.png',
@@ -64,7 +64,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A', // Placeholder: Update to actual correct answer
+    correctAnswer: 'A',
   },
   {
     question: '/images/Soal-Psikologi/124.png',
@@ -73,7 +73,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A', // Placeholder: Update to actual correct answer
+    correctAnswer: 'A',
   },
   {
     question: '/images/Soal-Psikologi/125.png',
@@ -82,7 +82,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A', // Placeholder: Update to actual correct answer
+    correctAnswer: 'A',
   },
   {
     question: '/images/Soal-Psikologi/126.png',
@@ -91,7 +91,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A', // Placeholder: Update to actual correct answer
+    correctAnswer: 'A',
   },
   {
     question: '/images/Soal-Psikologi/127.png',
@@ -100,7 +100,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A', // Placeholder: Update to actual correct answer
+    correctAnswer: 'A',
   },
   {
     question: '/images/Soal-Psikologi/128.png',
@@ -109,7 +109,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A', // Placeholder: Update to actual correct answer
+    correctAnswer: 'A',
   },
   // New entries from 129 to 136
   {
@@ -119,7 +119,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-129-136/C.png',
     answerD: '/images/Jawaban-no-129-136/D.png',
     answerE: '/images/Jawaban-no-129-136/E.png',
-    correctAnswer: 'A', // Placeholder: Update to actual correct answer
+    correctAnswer: 'A',
   },
   {
     question: '/images/Soal-Psikologi/130.png',
@@ -128,7 +128,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-129-136/C.png',
     answerD: '/images/Jawaban-no-129-136/D.png',
     answerE: '/images/Jawaban-no-129-136/E.png',
-    correctAnswer: 'A', // Placeholder: Update to actual correct answer
+    correctAnswer: 'A',
   },
   {
     question: '/images/Soal-Psikologi/131.png',
@@ -137,7 +137,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-129-136/C.png',
     answerD: '/images/Jawaban-no-129-136/D.png',
     answerE: '/images/Jawaban-no-129-136/E.png',
-    correctAnswer: 'A', // Placeholder: Update to actual correct answer
+    correctAnswer: 'A', 
   },
   {
     question: '/images/Soal-Psikologi/132.png',
@@ -146,7 +146,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-129-136/C.png',
     answerD: '/images/Jawaban-no-129-136/D.png',
     answerE: '/images/Jawaban-no-129-136/E.png',
-    correctAnswer: 'A', // Placeholder: Update to actual correct answer
+    correctAnswer: 'A',
   },
   {
     question: '/images/Soal-Psikologi/133.png',
@@ -155,7 +155,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-129-136/C.png',
     answerD: '/images/Jawaban-no-129-136/D.png',
     answerE: '/images/Jawaban-no-129-136/E.png',
-    correctAnswer: 'A', // Placeholder: Update to actual correct answer
+    correctAnswer: 'A',
   },
   {
     question: '/images/Soal-Psikologi/134.png',
@@ -164,7 +164,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-129-136/C.png',
     answerD: '/images/Jawaban-no-129-136/D.png',
     answerE: '/images/Jawaban-no-129-136/E.png',
-    correctAnswer: 'A', // Placeholder: Update to actual correct answer
+    correctAnswer: 'A',
   },
   {
     question: '/images/Soal-Psikologi/135.png',
@@ -173,7 +173,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-129-136/C.png',
     answerD: '/images/Jawaban-no-129-136/D.png',
     answerE: '/images/Jawaban-no-129-136/E.png',
-    correctAnswer: 'A', // Placeholder: Update to actual correct answer
+    correctAnswer: 'A',
   },
   {
     question: '/images/Soal-Psikologi/136.png',
@@ -182,7 +182,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-129-136/C.png',
     answerD: '/images/Jawaban-no-129-136/D.png',
     answerE: '/images/Jawaban-no-129-136/E.png',
-    correctAnswer: 'A', // Placeholder: Update to actual correct answer
+    correctAnswer: 'A',
   },
 ];
 
@@ -191,7 +191,7 @@ async function main() {
 
   for (const quizData of sampleQuizzes) {
     try {
-      const quiz = await prisma.quiz.create({
+      const quiz = await prisma.question.create({
         data: quizData,
       });
       console.log(`Created quiz with id: ${quiz.id} - Question path: "${quiz.question}"`);

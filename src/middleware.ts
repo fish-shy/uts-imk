@@ -7,7 +7,7 @@ export default auth( (req:any) => {
   const url = req.nextUrl;
 
 
-  if (!isLoggedIn && ["/", "/"].includes(url.pathname)) {
+  if (!isLoggedIn && ["/quiz","/profile"].includes(url.pathname)) {
     console.log(`Middleware: Not logged in, accessing protected route. Redirecting to /login.`);
     return NextResponse.redirect(new URL("/login", req.url));
   }

@@ -20,11 +20,8 @@ const Navbar = async() => {
               <Link href="/quiz" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium cursor-pointer">
                 Quiz
               </Link>
-              <Link href="/login" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium cursor-pointer">
-                Quiz
-              </Link>
               {session ? (
-                <Link href="/profile" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium cursor-pointer">
+                <Link href={`/profile/${session.user.id}`} className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium cursor-pointer">
                   Profile
                 </Link>
               ) : (

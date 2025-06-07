@@ -51,16 +51,11 @@ export const signInCredentials = async (formData: FormData) => {
   const { email, password } = validatedData.data;
 
   try {
-    const result = await signIn("credentials", {
+    await signIn("credentials", {
       email,
       password,
-      redirect: false,
+      redirectTo: "/",
     });
-
-    if (result?.error) {
-      return { error: "Invalid credentials" };
-    }
-    redirect("/");
   } catch (err) {
     console.error(err);
     return { error: "Something went wrong." };
