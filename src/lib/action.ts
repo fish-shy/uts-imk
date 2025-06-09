@@ -33,7 +33,7 @@ export const signUpCredentials = async (
       },
     });
   } catch (err) {
-    return { message: "Failed to register user."};
+    return { message: "Failed to register user.", err};
   }
   redirect("/login")
 };

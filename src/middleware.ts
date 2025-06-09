@@ -1,8 +1,9 @@
 // middleware.ts
 import { auth } from "@/auth";
+import { NextAuthRequest } from "next-auth";
 import { NextResponse } from "next/server";
 
-export default auth((req: { auth: { user: any } | null; nextUrl: URL; url: string }) => {
+export default auth((req: NextAuthRequest) => {
   const isLoggedIn = !!req.auth?.user;
   const url = req.nextUrl;
 
