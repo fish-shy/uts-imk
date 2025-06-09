@@ -4,15 +4,21 @@ import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import React from "react";
 
-const result = async ({params}:{params:{id: string}}) => {
+
+type Props = {
+  params: Promise<{ id: any }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+const result = async ({ params,searchParams } : Props) => {
   const session = await auth();
   if(!session?.user.id){
     redirect('/')
   }
-  const param = await params;
+  const {id} = await params;
   const result = await prisma.quizAttempt.findUnique({
     where: {
-      id: parseInt(param.id),
+      id: parseInt(id),
     },
     include: {
       answers: {

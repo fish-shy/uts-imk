@@ -5,19 +5,18 @@ import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import { AlertTriangle, Home, Brain } from "lucide-react";
 
-
-interface PageProps {
-  params: { id: string };
-}
-
-const Page = async ({ params } : PageProps) => {
+const Page = async ({ params }: {
+  params: Promise<{ id: string }>
+}) => {
   const session = await auth();
   
   if (!session?.user.id) {
     redirect("/login");
   }
 
-  const questionId = parseInt(params.id, 10);
+  // Await the params since it's now a Promise
+  const { id } = await params;
+  const questionId = parseInt(id, 10);
   
   if (isNaN(questionId)) {
     return (
