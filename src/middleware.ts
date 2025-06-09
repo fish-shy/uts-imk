@@ -2,10 +2,9 @@
 import { auth } from "@/auth";
 import { NextResponse } from "next/server";
 
-export default auth( (req:any) => {
+export default auth((req: { auth: { user: any } | null; nextUrl: URL; url: string }) => {
   const isLoggedIn = !!req.auth?.user;
   const url = req.nextUrl;
-
 
   if (!isLoggedIn && ["/quiz","/profile"].includes(url.pathname)) {
     console.log(`Middleware: Not logged in, accessing protected route. Redirecting to /login.`);

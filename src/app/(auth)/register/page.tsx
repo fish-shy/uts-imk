@@ -1,8 +1,6 @@
 import RegisterForm from "@/app/component/auth/RegisterForm";
 import GoogleButton from "@/app/component/button";
-import { auth } from "@/auth";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import React from "react";
 
 const page = async () => {

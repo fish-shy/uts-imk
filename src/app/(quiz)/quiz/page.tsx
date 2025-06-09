@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { Brain, ArrowRight, Clock, Target, Trophy } from 'lucide-react';
+import { Brain, ArrowRight,  Target, Trophy } from 'lucide-react';
 
 const QuizStartPage = () => {
   const quizFeatures = [

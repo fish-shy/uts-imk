@@ -83,7 +83,6 @@ export default async function ProfilePage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           <StatCard title="Total Quizzes" value={totalAttempts} color="blue" />
           <StatCard title="Average Score" value={averageScore.toFixed(1)} color="green" />
@@ -91,7 +90,6 @@ export default async function ProfilePage({ params }: PageProps) {
           <StatCard title="Accuracy" value={`${accuracy}%`} color="orange" />
         </div>
 
-        {/* Recent Attempts */}
         <div className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Recent Attempts</h2>
           {user.attempts.length === 0 ? (

@@ -1,5 +1,4 @@
 
-import { auth } from '@/auth';
 import Link from 'next/link';
 import React from 'react';
 import { Brain, Star, Users, Award, ArrowRight, CheckCircle, Zap, BookOpen } from 'lucide-react';
@@ -74,7 +73,7 @@ const Page = async () => {
           <div className="mb-8">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-6 py-3 text-white/80 mb-6">
               <Brain className="w-5 h-5 text-purple-400" />
-              <span className="text-sm font-medium">Unlock Your Mind's Potential</span>
+              <span className="text-sm font-medium">Unlock Your Mind&rsquo;s Potential</span>
             </div>
           </div>
           
@@ -128,10 +127,10 @@ const Page = async () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Why You'll <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Love</span> This Quiz
+              Why You&rsquo;ll <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Love</span> This Quiz
             </h2>
             <p className="text-xl text-white/70 max-w-3xl mx-auto">
-              Our Psychology Quiz isn't just about right or wrong answers—it's about unlocking your understanding of the human mind through an immersive, personalized experience.
+              Our Psychology Quiz isn&rsquo;t just about right or wrong answers—it&rsquo;s about unlocking your understanding of the human mind through an immersive, personalized experience.
             </p>
           </div>
 
@@ -227,7 +226,7 @@ const Page = async () => {
                     ))}
                   </div>
                   
-                  <p className="text-white/80 italic mb-6 leading-relaxed">"{testimonial.quote}"</p>
+                  <p className="text-white/80 italic mb-6 leading-relaxed">&ldquo;{testimonial.quote}&rdquo;</p>
                   
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 flex items-center justify-center text-white font-bold">

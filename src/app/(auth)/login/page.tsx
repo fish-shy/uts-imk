@@ -1,7 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { auth, signIn } from "@/auth";
-import { redirect } from "next/navigation";
 import LoginForm from "@/app/component/auth/LoginForm";
 import GoogleButton from "@/app/component/button";
 
@@ -15,7 +13,7 @@ const page = async () => {
         </h1>
         <LoginForm />
         <p className="mt-4 text-center text-sm text-gray-600">
-          Don't have an account?{" "}
+          Don&rsquo;t have an account?{" "}
           <Link
             href="/register"
             className="text-purple-800 hover:text-purple-700 font-medium">

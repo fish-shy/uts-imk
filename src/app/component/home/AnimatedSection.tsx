@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { ReactNode } from 'react';
 
-export const AnimatedSection = ({ children, className = "" } : {children:any, className:any}) => {
+export const AnimatedSection = ({ children, className = "" } : {children: ReactNode, className: string}) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

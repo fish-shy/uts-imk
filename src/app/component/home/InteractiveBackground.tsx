@@ -6,10 +6,10 @@ export const InteractiveBackground = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const handleMouseMove = (e:any) => {
+    const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ 
-        x: (e.clientX / window.innerWidth) * 100, 
-        y: (e.clientY / window.innerHeight) * 100 
+      x: (e.clientX / window.innerWidth) * 100, 
+      y: (e.clientY / window.innerHeight) * 100 
       });
     };
 
