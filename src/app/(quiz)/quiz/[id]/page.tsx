@@ -11,14 +11,13 @@ interface PageProps {
 }
 
 const Page = async ({ params } : PageProps) => {
-  const param = await params;
   const session = await auth();
   
   if (!session?.user.id) {
     redirect("/login");
   }
 
-  const questionId = parseInt(param.id, 10);
+  const questionId = parseInt(params.id, 10);
   
   if (isNaN(questionId)) {
     return (
@@ -71,14 +70,13 @@ const Page = async ({ params } : PageProps) => {
   if (!question) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex flex-col items-center justify-center p-4">
-        {/* Background elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-red-500/10 rounded-full blur-3xl" />
           <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl" />
         </div>
 
         <div className="relative bg-white/10 backdrop-blur-md border border-white/20 p-8 sm:p-12 rounded-2xl shadow-2xl text-center max-w-lg w-full">
-          {/* Error Icon */}
+
           <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
             <AlertTriangle className="w-8 h-8 text-white" />
           </div>
@@ -108,14 +106,13 @@ const Page = async ({ params } : PageProps) => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      {/* Subtle background elements */}
+
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-pink-500/10 rounded-full blur-3xl" />
         <div className="absolute top-3/4 left-3/4 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl" />
       </div>
 
-      {/* Header */}
       <div className="relative z-10 pt-8 pb-4 px-4">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <Link 
@@ -133,7 +130,6 @@ const Page = async ({ params } : PageProps) => {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="relative z-10 flex-1 flex items-center justify-center p-4 pt-8">
         <div className="w-full max-w-4xl">
           <QuestionForm question={question} />
