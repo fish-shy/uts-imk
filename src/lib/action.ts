@@ -4,21 +4,25 @@ import { LoginSchema, RegisterSchema } from "./zod";
 import { prisma } from "./prisma";
 import { redirect } from "next/navigation";
 import { signIn } from "@/auth";
+import { AuthError } from "next-auth";
 
-export const singUpCredentials = async (formData: FormData) => {
-  const validatedData = RegisterSchema.safeParse(
-    Object.fromEntries(formData.entries())
-  );
-  if (!validatedData.success) {
+export const signUpCredentials = async (
+  _prevState: unknown,
+  formData: FormData
+) => {
+  const data = Object.fromEntries(formData.entries());
+  const result = RegisterSchema.safeParse(data);
+
+  if (!result.success) {
     return {
-      error: validatedData.error.flatten().fieldErrors,
+      error:result.error.flatten().fieldErrors,
     };
   }
-  const { name, email, birthDate, password } = validatedData.data;
-  const hashedPassword = await hashSync(password, 10);
 
+  const { name, email, birthDate, password } = result.data;
+  const hashedPassword = hashSync(password, 10);
+  
   const birthDateFormatted = new Date(birthDate);
-
   try {
     await prisma.user.create({
       data: {
@@ -28,16 +32,13 @@ export const singUpCredentials = async (formData: FormData) => {
         password: hashedPassword,
       },
     });
-  } catch (error) {
-    console.error("Error creating user:", error);
-    return {
-      error: "An error occurred while creating the user.",
-    };
+  } catch (err) {
+    return { message: "Failed to register user."};
   }
-  redirect("/login");
+  redirect("/login")
 };
 
-export const signInCredentials = async (formData: FormData) => {
+export const signInCredentials = async (_prevState: unknown,formData: FormData) => {
   const validatedData = LoginSchema.safeParse(
     Object.fromEntries(formData.entries())
   );
@@ -57,7 +58,14 @@ export const signInCredentials = async (formData: FormData) => {
       redirectTo: "/",
     });
   } catch (err) {
-    console.error(err);
-    return { error: "Something went wrong." };
+    if(err instanceof AuthError) {
+      switch(err.type){
+        case "CredentialsSignin":
+          return { message: "Invalid email or password." };
+        default:
+          return { message: "An unknown error occurred." };
+      }
+    }
   }
+  redirect("/");
 };

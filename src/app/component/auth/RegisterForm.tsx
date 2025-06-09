@@ -1,14 +1,14 @@
 "use client";
 import React, { useActionState } from "react";
-import { singUpCredentials } from "@/lib/action"; 
+import { signUpCredentials } from "@/lib/action"; 
 
 const RegisterForm = () => {
-  const [state, formActions] = useActionState(
-    (prevState: any, formData: FormData) => singUpCredentials(formData),
-    null
-  );
+ const [state, formActions] = useActionState(signUpCredentials, null)
   return (
     <form className="space-y-4" action={formActions}>
+       {state?.message ? <div className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-100" role="alert">
+        <span>{state?.message}</span>
+      </div> : null}
       <div>
         <label className="block text-sm font-medium text-black mb-1">
           Full Name
@@ -19,6 +19,11 @@ const RegisterForm = () => {
           placeholder="Enter your full name"
           className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-purple-600 text-black"
         />
+        <div aria-live="polite" aria-atomic="true">
+          <span className="text-sm text-red-500 mt-2">
+            {state?.error?.name}
+          </span>
+        </div>
       </div>
       <div>
         <label className="block text-sm font-medium text-black mb-1">
@@ -30,6 +35,11 @@ const RegisterForm = () => {
           placeholder="Enter your email"
           className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-purple-600 text-black"
         />
+        <div aria-live="polite" aria-atomic="true">
+          <span className="text-sm text-red-500 mt-2">
+            {state?.error?.email}
+          </span>
+        </div>
       </div>
       <div>
         <label className="block text-sm font-medium text-black mb-1">
@@ -41,6 +51,11 @@ const RegisterForm = () => {
           placeholder="Enter Your Birth Date"
           className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-purple-600 text-black"
         />
+        <div aria-live="polite" aria-atomic="true">
+          <span className="text-sm text-red-500 mt-2">
+            {state?.error?.birthDate}
+          </span>
+        </div>
       </div>
       <div>
         <label className="block text-sm font-medium text-black mb-1">
@@ -52,6 +67,11 @@ const RegisterForm = () => {
           placeholder="Create a password"
           className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-purple-600 text-black"
         />
+        <div aria-live="polite" aria-atomic="true">
+          <span className="text-sm text-red-500 mt-2">
+            {state?.error?.password}
+          </span>
+        </div>
       </div>
       <button
         type="submit"
