@@ -1,4 +1,4 @@
-// datasource and generator remain the same
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")

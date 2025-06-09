@@ -19,7 +19,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A',
+    correctAnswer: 'C',
   },
   {
     question: '/images/Soal-Psikologi/119.png',
@@ -28,7 +28,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A',
+    correctAnswer: 'B',
   },
   {
     question: '/images/Soal-Psikologi/120.png',
@@ -46,7 +46,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A',
+    correctAnswer: 'D',
   },
   {
     question: '/images/Soal-Psikologi/122.png',
@@ -55,7 +55,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A',
+    correctAnswer: 'B',
   },
   {
     question: '/images/Soal-Psikologi/123.png',
@@ -64,7 +64,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A',
+    correctAnswer: 'C',
   },
   {
     question: '/images/Soal-Psikologi/124.png',
@@ -73,7 +73,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A',
+    correctAnswer: 'E',
   },
   {
     question: '/images/Soal-Psikologi/125.png',
@@ -82,7 +82,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A',
+    correctAnswer: 'E',
   },
   {
     question: '/images/Soal-Psikologi/126.png',
@@ -91,7 +91,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A',
+    correctAnswer: 'D',
   },
   {
     question: '/images/Soal-Psikologi/127.png',
@@ -100,7 +100,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A',
+    correctAnswer: 'E',
   },
   {
     question: '/images/Soal-Psikologi/128.png',
@@ -109,7 +109,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-117-128/C.png',
     answerD: '/images/Jawaban-no-117-128/D.png',
     answerE: '/images/Jawaban-no-117-128/E.png',
-    correctAnswer: 'A',
+    correctAnswer: 'B',
   },
   // New entries from 129 to 136
   {
@@ -119,7 +119,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-129-136/C.png',
     answerD: '/images/Jawaban-no-129-136/D.png',
     answerE: '/images/Jawaban-no-129-136/E.png',
-    correctAnswer: 'A',
+    correctAnswer: 'D',
   },
   {
     question: '/images/Soal-Psikologi/130.png',
@@ -128,7 +128,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-129-136/C.png',
     answerD: '/images/Jawaban-no-129-136/D.png',
     answerE: '/images/Jawaban-no-129-136/E.png',
-    correctAnswer: 'A',
+    correctAnswer: 'C',
   },
   {
     question: '/images/Soal-Psikologi/131.png',
@@ -137,7 +137,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-129-136/C.png',
     answerD: '/images/Jawaban-no-129-136/D.png',
     answerE: '/images/Jawaban-no-129-136/E.png',
-    correctAnswer: 'A', 
+    correctAnswer: 'B', 
   },
   {
     question: '/images/Soal-Psikologi/132.png',
@@ -155,7 +155,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-129-136/C.png',
     answerD: '/images/Jawaban-no-129-136/D.png',
     answerE: '/images/Jawaban-no-129-136/E.png',
-    correctAnswer: 'A',
+    correctAnswer: 'B',
   },
   {
     question: '/images/Soal-Psikologi/134.png',
@@ -164,7 +164,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-129-136/C.png',
     answerD: '/images/Jawaban-no-129-136/D.png',
     answerE: '/images/Jawaban-no-129-136/E.png',
-    correctAnswer: 'A',
+    correctAnswer: 'D',
   },
   {
     question: '/images/Soal-Psikologi/135.png',
@@ -173,7 +173,7 @@ const sampleQuizzes = [
     answerC: '/images/Jawaban-no-129-136/C.png',
     answerD: '/images/Jawaban-no-129-136/D.png',
     answerE: '/images/Jawaban-no-129-136/E.png',
-    correctAnswer: 'A',
+    correctAnswer: 'C',
   },
   {
     question: '/images/Soal-Psikologi/136.png',
