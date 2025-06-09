@@ -6,10 +6,11 @@ import { format } from 'date-fns';
 import { auth } from '@/auth';
 
 interface PageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
-export default async function ProfilePage({ params }: PageProps) {
+export default async function ProfilePage(props: PageProps) {
+  const params = await props.params;
   const session = await auth();
 
   if (!session?.user?.email) {
