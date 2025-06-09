@@ -5,7 +5,12 @@ import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import { AlertTriangle, Home, Brain } from "lucide-react";
 
-const Page = async ({ params }: { params: { id: string } }) => {
+
+interface PageProps {
+  params: { id: string };
+}
+
+const Page = async ({ params } : PageProps) => {
   const param = await params;
   const session = await auth();
   
