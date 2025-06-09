@@ -7,7 +7,6 @@ import { compareSync } from "bcrypt-ts";
 import { LoginSchema } from "@/lib/zod";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 
-
 export const { auth, signIn, signOut, handlers } = NextAuth({
   adapter: PrismaAdapter(prisma),
   session: {

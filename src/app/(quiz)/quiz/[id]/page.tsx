@@ -14,21 +14,20 @@ const Page = async ({ params }: {
     redirect("/login");
   }
 
-  // Await the params since it's now a Promise
   const { id } = await params;
   const questionId = parseInt(id, 10);
   
   if (isNaN(questionId)) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex flex-col items-center justify-center p-4">
-        {/* Background elements */}
+
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-red-500/10 rounded-full blur-3xl" />
           <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl" />
         </div>
 
         <div className="relative bg-white/10 backdrop-blur-md border border-white/20 p-8 sm:p-12 rounded-2xl shadow-2xl text-center max-w-lg w-full">
-          {/* Error Icon */}
+
           <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
             <AlertTriangle className="w-8 h-8 text-white" />
           </div>
