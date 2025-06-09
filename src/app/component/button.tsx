@@ -6,7 +6,7 @@ const GoogleButton = () => {
     <form
       action={async () => {
         "use server";
-        await signIn("google", { redirectTo: "/quiz" });
+        await signIn("google", { redirectTo: "/quiz" });  
       }}
     >
       <button

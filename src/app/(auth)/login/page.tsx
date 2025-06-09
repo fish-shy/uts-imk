@@ -2,9 +2,14 @@ import React from "react";
 import Link from "next/link";
 import LoginForm from "@/app/component/auth/LoginForm";
 import GoogleButton from "@/app/component/button";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
 
 const page = async () => {
-
+  const session = await auth();
+  if(session){
+    redirect("/");
+  }
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-md w-96">

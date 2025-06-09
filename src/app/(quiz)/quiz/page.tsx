@@ -1,8 +1,14 @@
 import Link from 'next/link';
 import React from 'react';
 import { Brain, ArrowRight,  Target, Trophy } from 'lucide-react';
+import { auth } from '@/auth';
+import { redirect } from 'next/navigation';
 
-const QuizStartPage = () => {
+const QuizStartPage = async () => {
+  const session = await auth();
+    if(!session){
+      redirect("/login");
+    }
   const quizFeatures = [
     { icon: <Target className="w-5 h-5" />, text: "20 questions" },
     { icon: <Trophy className="w-5 h-5" />, text: "Instant results" }
