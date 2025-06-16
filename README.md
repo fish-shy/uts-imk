@@ -1,8 +1,22 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
+use thhe command
+```bash
+npm i
+```
 
-First, run the development server:
+```bash
+npx prisma generate
+```
+
+```bash
+npx prisma db seed
+```
+
+update the env file and make it .env
+
+run the development server:
 
 ```bash
 npm run dev
