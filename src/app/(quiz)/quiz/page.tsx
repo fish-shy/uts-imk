@@ -34,8 +34,6 @@ const QuizStartPage = async () => {
         <p className="text-white/70 mb-8 text-lg leading-relaxed">
           Test your knowledge of fascinating psychological concepts. Are you ready to challenge your mind and discover new insights?
         </p>
-
-        {/* Quiz features */}
         <div className="flex justify-center gap-6 mb-8">
           {quizFeatures.map((feature, index) => (
             <div key={index} className="flex items-center gap-2 text-white/60 text-sm">
@@ -47,7 +45,6 @@ const QuizStartPage = async () => {
           ))}
         </div>
 
-        {/* CTA Button */}
         <Link
           href="/quiz/1"
           className="group relative overflow-hidden bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-4 px-8 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25 inline-flex items-center gap-3 w-full sm:w-auto justify-center"
@@ -59,7 +56,6 @@ const QuizStartPage = async () => {
           <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </Link>
 
-        {/* Small encouragement text */}
         <p className="text-white/50 text-sm mt-4">
           No time limit • Multiple choice • Fun & educational
         </p>
