@@ -1,6 +1,8 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import { Brain, Heart, Lightbulb, TrendingUp, RotateCcw, Share2, Download, Eye, Smile, BookOpen } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+
 
 interface QuizResult {
   id: number;
@@ -22,22 +24,41 @@ interface PsychQuizResultsProps {
   result: QuizResult;
   totalQuestions?: number;
   quizType?: string;
-  onRetry?: () => void;
-  onShare?: () => void;
-  onDownload?: () => void;
 }
 
 export default function PsychologicalQuizResults({ 
   result, 
   totalQuestions = 20, 
-  quizType = "Psychological Assessment",
-  onRetry,
-  onShare,
-  onDownload 
+  quizType = "Psychological Assessment"
 }: PsychQuizResultsProps) {
+  const router = useRouter();
   const [animationComplete, setAnimationComplete] = useState(false);
   const [scoreAnimation, setScoreAnimation] = useState(0);
   
+  const onRetry = () =>{
+    localStorage.clear();
+    router.push('/quiz');
+  }
+  const onShare = () => {
+    const shareData = {
+      title: 'Psychological Quiz Results',
+      text: `I scored ${result.score} out of ${totalQuestions} in the ${quizType}. Check it out!`,
+      url: window.location.href,
+    };
+    if (navigator.share) {
+      navigator.share(shareData).catch(console.error);
+    } else {
+      alert('Sharing not supported in this browser.');
+    }
+  };
+  const onDownload = () => {
+    const element = document.createElement("a");
+    const file = new Blob([JSON.stringify(result, null, 2)], { type: 'application/json' });
+    element.href = URL.createObjectURL(file);
+    element.download = `quiz_result_${result.id}.json`;
+    document.body.appendChild(element);
+    element.click();
+  };
   const score = result?.score || 0;
   const percentage = Math.round((score / totalQuestions) * 100);
   const correctAnswers = result?.answers?.filter(a => a.isCorrect).length || score;
@@ -264,7 +285,6 @@ export default function PsychologicalQuizResults({
             </div>
           </div>
 
-          {/* Psychological Assessment & Recommendation */}
           <div className="bg-gradient-to-r from-blue-50/50 to-indigo-50/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 border border-blue-200/50">
             <div className="flex items-start gap-3 sm:gap-4">
               <div className="flex-shrink-0">
@@ -292,7 +312,6 @@ export default function PsychologicalQuizResults({
             </div>
           </div>
 
-          {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <button 
               onClick={onRetry}
@@ -319,7 +338,6 @@ export default function PsychologicalQuizResults({
             </button>
           </div>
 
-          {/* Footer */}
           <div className="text-center mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200">
             <p className="text-gray-500 text-xs sm:text-sm">
               Assessment completed on {result?.createdAt ? new Date(result.createdAt).toLocaleDateString() : new Date().toLocaleDateString()}
@@ -335,7 +353,6 @@ export default function PsychologicalQuizResults({
           </div>
         </div>
 
-        {/* Subtle floating elements */}
         <div className="fixed inset-0 pointer-events-none overflow-hidden hidden sm:block">
           <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-blue-300/30 rounded-full animate-pulse"></div>
           <div className="absolute top-3/4 right-1/4 w-2 h-2 bg-indigo-300/40 rounded-full animate-ping"></div>

@@ -3,7 +3,11 @@ import Link from 'next/link'
 import { auth } from '@/auth';
 
 const Navbar = async() => {
-  const session = await auth();
+  let session = await auth();
+  if(!session){
+    session = null;  
+  }
+
   return (
     <header className="bg-white shadow-md fixed w-full top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
