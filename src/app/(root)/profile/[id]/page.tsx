@@ -62,41 +62,49 @@ export default async function ProfilePage(props: PageProps) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-30 mb-30">
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center space-x-6">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+      <div className="max-w-4xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 md:py-8">
+        {/* Profile Header */}
+        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
+            {/* User Info Section */}
+            <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-6">
+              {/* Avatar */}
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
                 {user.image ? (
                   <img
                     src={user.image}
                     alt={user.name || "User"}
-                    className="w-20 h-20 rounded-full object-cover"
+                    className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover"
                   />
                 ) : (
-                  <span className="text-2xl font-bold text-white">
+                  <span className="text-xl sm:text-2xl font-bold text-white">
                     {user.name?.charAt(0).toUpperCase() ||
                       user.email?.charAt(0).toUpperCase()}
                   </span>
                 )}
               </div>
-              <div>
-                <h1 className="text-3xl font-bold text-gray-900">
+              
+              {/* User Details */}
+              <div className="text-center sm:text-left">
+                <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">
                   {user.name || "User"}
                 </h1>
-                <p className="text-gray-600">{user.email}</p>
+                <p className="text-gray-600 text-sm sm:text-base break-all sm:break-normal">
+                  {user.email}
+                </p>
                 {user.dateOfBirth && (
-                  <p className="text-gray-500 text-sm">
-                    Born: {format(new Date(user.dateOfBirth), "MMMM d, yyyy")}
+                  <p className="text-gray-500 text-xs sm:text-sm mt-1">
+                    Born: {format(new Date(user.dateOfBirth), "MMM d, yyyy")}
                   </p>
                 )}
-                <p className="text-gray-500 text-sm">
-                  Member since {format(new Date(user.createdAt), "MMMM yyyy")}
+                <p className="text-gray-500 text-xs sm:text-sm">
+                  Member since {format(new Date(user.createdAt), "MMM yyyy")}
                 </p>
               </div>
             </div>
 
-            <div className="mt-8 flex ">
+            {/* Sign Out Button */}
+            <div className="flex justify-center sm:justify-end">
               <form
                 action={async () => {
                   "use server";
@@ -105,11 +113,11 @@ export default async function ProfilePage(props: PageProps) {
               >
                 <button
                   type="submit"
-                  className="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-lg shadow-md transition-colors duration-300 flex items-center"
+                  className="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 sm:px-6 rounded-lg shadow-md transition-colors duration-300 flex items-center text-sm sm:text-base"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 mr-2"
+                    className="h-4 w-4 sm:h-5 sm:w-5 mr-2"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -128,7 +136,8 @@ export default async function ProfilePage(props: PageProps) {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        {/* Stats Grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8">
           <StatCard title="Total Quizzes" value={totalAttempts} color="blue" />
           <StatCard
             title="Average Score"
@@ -139,8 +148,9 @@ export default async function ProfilePage(props: PageProps) {
           <StatCard title="Accuracy" value={`${accuracy}%`} color="orange" />
         </div>
 
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+        {/* Recent Attempts */}
+        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
             Recent Attempts
           </h2>
           {user.attempts.length === 0 ? (
@@ -148,7 +158,7 @@ export default async function ProfilePage(props: PageProps) {
               No attempts yet.
             </div>
           ) : (
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {user.attempts.slice(0, 10).map((attempt) => {
                 const correct = attempt.answers.filter(
                   (a) => a.isCorrect
@@ -161,21 +171,32 @@ export default async function ProfilePage(props: PageProps) {
                 return (
                   <div
                     key={attempt.id}
-                    className="border border-gray-200 rounded-lg p-4"
+                    className="border border-gray-200 rounded-lg p-3 sm:p-4"
                   >
-                    <div className="flex justify-between">
-                      <div>
-                        <p className="text-lg font-semibold text-gray-800">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                      <div className="flex-1">
+                        <p className="text-base sm:text-lg font-semibold text-gray-800">
                           Score: {attempt.score} ({correct}/{total})
                         </p>
-                        <p className="text-sm text-gray-500">
-                          {format(new Date(attempt.createdAt), "PPpp")}
+                        <p className="text-xs sm:text-sm text-gray-500 mt-1">
+                          {format(new Date(attempt.createdAt), "MMM d, yyyy 'at' h:mm a")}
                         </p>
                       </div>
+                      <div className="text-right sm:ml-4">
+                        <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${
+                          percentage >= 80
+                            ? "bg-green-100 text-green-800"
+                            : percentage >= 60
+                            ? "bg-yellow-100 text-yellow-800"
+                            : "bg-red-100 text-red-800"
+                        }`}>
+                          {percentage}%
+                        </span>
+                      </div>
                     </div>
-                    <div className="mt-2 w-full bg-gray-200 rounded-full h-2">
+                    <div className="mt-3 w-full bg-gray-200 rounded-full h-2">
                       <div
-                        className={`h-2 rounded-full ${
+                        className={`h-2 rounded-full transition-all duration-300 ${
                           percentage >= 80
                             ? "bg-green-500"
                             : percentage >= 60
@@ -206,9 +227,13 @@ function StatCard({
   color: string;
 }) {
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 text-center">
-      <div className={`text-3xl font-bold text-${color}-600 mb-2`}>{value}</div>
-      <div className="text-gray-600">{title}</div>
+    <div className="bg-white rounded-lg shadow-md p-3 sm:p-4 md:p-6 text-center">
+      <div className={`text-xl sm:text-2xl md:text-3xl font-bold text-${color}-600 mb-1 sm:mb-2`}>
+        {value}
+      </div>
+      <div className="text-gray-600 text-xs sm:text-sm md:text-base leading-tight">
+        {title}
+      </div>
     </div>
   );
 }
