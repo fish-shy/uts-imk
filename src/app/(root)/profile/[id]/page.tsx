@@ -62,9 +62,8 @@ export default async function ProfilePage(props: PageProps) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
-      <div className="max-w-4xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 md:py-8">
-        {/* Profile Header */}
-        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
+      <div className="max-w-4xl  mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 md:py-8">
+        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8 mt-30">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
             {/* User Info Section */}
             <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-6">
